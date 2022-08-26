@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.documentTree = new System.Windows.Forms.TreeView();
             this.btnOpenFile = new System.Windows.Forms.Button();
-            this.copyContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblXml = new System.Windows.Forms.Label();
+            this.lstAttributes = new System.Windows.Forms.ListBox();
+            this.btnGetResult = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblValue = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblPath = new System.Windows.Forms.Label();
-            this.copyContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // documentTree
             // 
-            this.documentTree.Location = new System.Drawing.Point(12, 66);
+            this.documentTree.Location = new System.Drawing.Point(12, 52);
             this.documentTree.Name = "documentTree";
             this.documentTree.Size = new System.Drawing.Size(302, 496);
             this.documentTree.TabIndex = 0;
@@ -56,34 +56,60 @@
             this.btnOpenFile.UseVisualStyleBackColor = true;
             this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
-            // copyContextMenu
+            // lstAttributes
             // 
-            this.copyContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copyToolStripMenuItem});
-            this.copyContextMenu.Name = "copyContextMenu";
-            this.copyContextMenu.Size = new System.Drawing.Size(103, 26);
+            this.lstAttributes.FormattingEnabled = true;
+            this.lstAttributes.ItemHeight = 15;
+            this.lstAttributes.Location = new System.Drawing.Point(333, 52);
+            this.lstAttributes.Name = "lstAttributes";
+            this.lstAttributes.Size = new System.Drawing.Size(165, 454);
+            this.lstAttributes.TabIndex = 5;
+            this.lstAttributes.SelectedIndexChanged += new System.EventHandler(this.lstAttributes_SelectedIndexChanged);
             // 
-            // copyToolStripMenuItem
+            // btnGetResult
             // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.copyToolStripMenuItem.Text = "Copy";
+            this.btnGetResult.Location = new System.Drawing.Point(526, 525);
+            this.btnGetResult.Name = "btnGetResult";
+            this.btnGetResult.Size = new System.Drawing.Size(75, 23);
+            this.btnGetResult.TabIndex = 6;
+            this.btnGetResult.Text = "Get Result";
+            this.btnGetResult.UseVisualStyleBackColor = true;
+            this.btnGetResult.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblXml
+            // label1
             // 
-            this.lblXml.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblXml.Location = new System.Drawing.Point(453, 106);
-            this.lblXml.Name = "lblXml";
-            this.lblXml.Size = new System.Drawing.Size(428, 446);
-            this.lblXml.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(530, 427);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Value";
+            // 
+            // lblValue
+            // 
+            this.lblValue.AutoSize = true;
+            this.lblValue.Location = new System.Drawing.Point(584, 428);
+            this.lblValue.Name = "lblValue";
+            this.lblValue.Size = new System.Drawing.Size(0, 15);
+            this.lblValue.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(530, 455);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Path";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblPath
             // 
             this.lblPath.AutoSize = true;
-            this.lblPath.Location = new System.Drawing.Point(453, 66);
+            this.lblPath.Location = new System.Drawing.Point(584, 455);
             this.lblPath.Name = "lblPath";
             this.lblPath.Size = new System.Drawing.Size(0, 15);
-            this.lblPath.TabIndex = 4;
+            this.lblPath.TabIndex = 10;
             // 
             // Form1
             // 
@@ -91,13 +117,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 727);
             this.Controls.Add(this.lblPath);
-            this.Controls.Add(this.lblXml);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblValue);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnGetResult);
+            this.Controls.Add(this.lstAttributes);
             this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.documentTree);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.copyContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,9 +136,11 @@
 
         private TreeView documentTree;
         private Button btnOpenFile;
-        private ContextMenuStrip copyContextMenu;
-        private ToolStripMenuItem copyToolStripMenuItem;
-        private Label lblXml;
+        private ListBox lstAttributes;
+        private Button btnGetResult;
+        private Label label1;
+        private Label lblValue;
+        private Label label2;
         private Label lblPath;
     }
 }
